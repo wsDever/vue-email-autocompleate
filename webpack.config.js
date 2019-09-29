@@ -6,8 +6,6 @@ const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 
-const fs = require('fs');
-
 /**
  * 环境变量
  * @type {String}
@@ -27,7 +25,7 @@ let config = {
         index: './src/index.js'
       }:{
         index: './src/index.js',
-        main: './src/components/pic-show/index.js'
+        main: './src/components/email-autocompleate/index.js'
       }
     },
   /**
@@ -99,7 +97,18 @@ let config = {
       reloadAll: true,
       cssModules: false
     })
-  ]
+  ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        // common: {
+        //   name: 'common',
+        //   chunks: 'all',
+        //   minChunks: 2
+        // }
+      }
+    }
+  }
 };
 
 /**
@@ -145,7 +154,7 @@ if (ENV !== 'development') {
     filename: '[name].js',
     path: setPath('dist'),
     publicPath: './',
-    library: 'pictureShow',
+    library: 'emailAutocomplate',
     libraryTarget: 'umd', // 指定输出格式
     umdNamedDefine: true 
   };
@@ -168,7 +177,7 @@ if (ENV !== 'development') {
         compress: {
           unused: true,
           warnings: true,
-          drop_console: true  //打包得改
+          drop_console: true
         },
         output: {
           comments: false

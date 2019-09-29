@@ -24,19 +24,13 @@ Vue.use(emailAutocompleate)
 ```
 #### 参数说明
 ```
-url: string          ---- 要展示的图片地址
-toolbar: boolen      ---- 是否显示工具栏，默认不显示
-tools: Array         ---- 工具栏（放大，缩小，旋转）
-onClose: func        ---- 关闭图片时的函数 ，默认空
+className: String         ---- 自定义样式
+placeHolder: String       ---- 提示
+suffixs: Array            ---- 邮箱后缀
 ```
 #### 更新记录
-###### 2019-06-13 -1.0.0
-###### 1、点击图片可查看
-###### 2、关闭添加回调函数
-
-###### 2019-06-17 -2.0.0
-###### 1、添加图片旋转、放大、缩小功能
-
+###### 2019-09-29 -1.0.0
+###### 1、邮箱自动补全
 
 #### Demo效果
 [点击查看](https://wsdever.github.io/vue-email-autocompleate/)
